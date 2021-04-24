@@ -13,3 +13,63 @@
  *= require_tree .
  *= require_self
  */
+ 
+/*=====================================layouts/application=====================================*/
+header{
+    height:60px;
+    background-color:black;
+    color:white;
+}
+
+.header_div1{
+    display:flex;
+    align-items:center;
+    margin-left:30px;
+}
+
+header a{
+    margin-right:10px;
+}
+
+.header_title a{
+    font-size:20px;
+    margin-right:50px;
+}
+
+.header_div1 p{
+    margin-right:10px;
+}
+
+.header_margin{
+    margin-left:30px;
+}
+
+.flash_div{
+    background-color:#ffcc00;
+}
+
+.error_message{
+    color:red;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.error_message ul{
+    margin:0;
+}
+
+a{
+    text-decoration:none;
+}
+
+header a{
+    color:white;
+}
+
+header img{
+    width:50px;
+    height:50px;
+    object-fit:cover;
+    border-radius:50px;
+}

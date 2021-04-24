@@ -1,0 +1,41 @@
+<!--Reservations#index-->
+<div class="content_div">
+    <div>
+        <h1>予約済みルーム一覧</h1>
+    </div>
+    <div class="reservations_table">
+        <table width="90%" align="center" height="160">
+            <thead class="reservations_thead">
+                <tr>
+                    <th>ルーム画像</th>
+                    <th>ルーム名</th>
+                    <th>ルーム紹介</th>
+                    <th>合計料金</th>
+                    <th>開始日</th>
+                    <th>終了日</th>
+                </tr>
+            </thead>
+            <tbody class="reservations_tbody">
+                <% @reservations.each do |reservations| %>
+                    <% @room = Room.find_by(id: reservations.room_id) %>
+                    <tr>
+                        <td>
+                            <%= link_to "/rooms/#{@room.id}" do %>
+                                <%= image_tag @room.image.url %>
+                            <% end %>
+                        </td>
+                        <td>
+                            <%= link_to "/rooms/#{@room.id}" do %>
+                                <%= @room.name %>
+                            <% end %>
+                        </td>
+                        <td><%= @room.introduction %></td>
+                        <td><%= reservations.total_fee %></td>
+                        <td><%= reservations.start_date.strftime('%Y/%m/%d') %></td>
+                        <td><%= reservations.end_date.strftime('%Y/%m/%d') %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<!--Rooms#show-->
+<div>
+    <div class="error_message">
+        <%= render"shared/error", obj: @room %>
+    </div>
+    <div class="room_show_content1">
+        <div class="room_show_image">
+            <%= image_tag @room.image.url %>
+            <div>
+                <h3><%= @room.name %></h3>
+                <p><%= @room.address %></p>
+            </div>
+            <div class="room_show_border">
+                <p><%= @room.introduction %></p>
+            </div>
+        </div>
+        <div class="room_show_reservation">
+            <p>¥<%= @room.fee %>/日</p>
+            <%= form_tag("/reservations/new", method: :get) do %>
+                <div>
+                    <p>開始日</p>
+                    <%= date_field_tag :start_date %>
+                </div>
+                <div>
+                    <p>終了日</p>
+                    <%= date_field_tag :end_date %>
+                </div>
+                <div>
+                    <p>人数</p>
+                    <%= number_field_tag :number_of_people %>
+                </div>
+                <div>
+                    <%= hidden_field_tag :room_id, @room.id %>
+                    <%= hidden_field_tag :fee, @room.fee %>
+                </div>
+                <div>
+                    <%= submit_tag "予約する" %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="room_show_content2">
+        
+    </div>
+</div>

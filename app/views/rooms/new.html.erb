@@ -1,0 +1,37 @@
+<!--Rooms#new-->
+<div class="content_div content_div_new">
+    <div class="error_message">
+        <%= render"shared/error", obj: @room %>
+    </div>
+    <div class="room_new_div">
+        <h3>ルーム登録情報</h3>
+        <%= form_for @room do |f| %>
+            <div class="room_new_content">
+                <p>ルーム名</p>
+                <%= f.text_field :name %>
+            </div>
+            <div class="room_new_content">
+                <p>ルーム紹介</p>
+                <%= f.text_area :introduction %>
+            </div>
+            <div class="room_new_content">
+                <p>料金</p>
+                <%= f.number_field :fee %>
+            </div>
+            <div class="room_new_content">
+                <p>住所</p>
+                <%= f.text_field :address %>
+            </div>
+            <div class="room_new_content room_new_content_last">
+                <p>ルーム画像</p>
+                <%= f.file_field :image %>
+            </div>
+            <div>
+                <%= f.hidden_field :user_id, value:@user %>
+            </div>
+            <div class="room_new_content_submit">
+                <%= f.submit "登録" %>
+            </div>
+        <% end %>
+    </div>
+</div>
