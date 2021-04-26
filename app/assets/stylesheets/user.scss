@@ -1,0 +1,57 @@
+// Place all the styles related to the user controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+/*=====================================================================================
+                                       user
+=====================================================================================*/
+
+/*=====================================user#new=====================================*/
+.user_signup{
+    width:600px;
+    height:550px;
+    margin:20px auto;
+    padding-left:30px;
+    border:1px solid black;
+}
+
+
+/*=====================================user#login_form=====================================*/
+.login_failure_message{
+    color:red;
+}
+
+/*=====================================user#show=====================================*/
+.user_show{
+    display:flex;
+    justify-content:center;
+}
+
+.user_show_div{
+    width:600px;
+    height:550px;
+    margin:20px 0;
+    padding:0 50px;
+    border:solid 2px black;
+}
+
+.user_show_div h3{
+    border-bottom:solid 1px #aaa;
+}
+
+.user_show_image{
+    text-align:center;
+}
+
+.user_show_image img{
+    width:65px;
+    height:65px;
+    object-fit:cover;
+    border-radius:50px;
+}
+
+.user_show_border{
+    margin-top:10px;
+    border-top:solid 1px #aaa;
+}

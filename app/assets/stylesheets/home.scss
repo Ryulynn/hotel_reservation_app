@@ -1,0 +1,13 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+/*=====================================home/top=====================================*/
+.home_top{
+    display:flex;
+    align-items:center;
+}
+
+.home_top_div{
+    margin:50px auto;
+    font-size:100px;
+}

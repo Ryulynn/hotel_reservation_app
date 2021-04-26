@@ -1,0 +1,22 @@
+<!--Rooms#index-->
+<div class="content_div">
+    <div>
+        <h1>ルーム一覧</h1>
+    </div>
+    <div class="room_index">
+        <% @rooms.each do |rooms| %>
+            <div class="room_index_content">
+                <%= link_to "/rooms/#{rooms.id}" do %>
+                    <div class="room_index_content_image_div">
+                        <%= image_tag rooms.image.url %>
+                    </div>
+                    <div class="room_index_content_text_div">
+                        <p class="room_index_content_name"><%= rooms.name %></p>
+                        <p class="room_index_content_address"><%= rooms.address %></p>
+                        <p class="room_index_content_fee">¥<%= rooms.fee %></p>
+                    </div>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+</div>

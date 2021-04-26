@@ -11,6 +11,43 @@
   </head>
 
   <body>
+    <header>
+      <div class="header_div1">
+        <div class="header_title">
+          <%= link_to "ホテル予約サイト", "/", method: :get %>
+        </div>
+          <p>
+            <%= form_tag("/rooms/index", method: :get) do %>
+              エリア：<%= text_field_tag :search_area %>
+              <%= submit_tag "検索" %>
+            <% end %>
+          </p>
+          <p>
+            <%= form_tag("/rooms/index", method: :get) do %>
+              キーワード：<%= text_field_tag :search_keyword %>
+              <%= submit_tag "検索" %>
+            <% end %>
+          </p>
+        <p class="header_margin">
+          <% if session[:user_name] %>
+            <%= link_to "ルーム一覧", "/rooms/index", method: :get %>
+            <%= link_to "ルーム出品", "/rooms/new", method: :get %>
+            <%= link_to "予約したルーム", "/reservations", method: :get %>
+            <%= link_to "プロフィール編集", "/user/#{session[:user_id]}", method: :get %>
+            <%= link_to "ログアウト", "/user/logout", method: :post %>
+            ユーザー名：<%= session[:user_name] %>
+          <% elsif session[:user_name] == nil %>
+            <%= link_to "ログイン", "/user/login", method: :get %>
+            <%= link_to "新規登録", "/user/signup", method: :get %>
+          <% end %>
+        </p>
+      </div>
+    </header>
+    <div class="flash_div">
+        <% if flash.notice %>
+            <p class="flash"><%= flash.notice %></p>
+        <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

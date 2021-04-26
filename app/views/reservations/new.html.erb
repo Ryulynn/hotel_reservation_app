@@ -1,0 +1,36 @@
+<!--reservations#new-->
+<div>
+    <div class="reservation_confirm">
+        <div>
+            <h3>予約内容確認</h3>
+        </div>
+        <div>
+            <p>¥<%= @reservation.fee %>/日</p>
+            <p class="reservation_confirm_border">開始日</p>
+            <p class="reservation_confirm_highlight"><%= @reservation.start_date.strftime('%Y/%m/%d') %></p>
+            <p>終了日</p>
+            <p class="reservation_confirm_highlight"><%= @reservation.end_date.strftime('%Y/%m/%d') %></p>
+            <p>使用日数：<%= @days %></p>
+        </div>
+        <div>
+            <p class="reservation_confirm_border">人数：<%= @reservation.number_of_people %>人</p>
+        </div>
+        <div>
+            <p class="reservation_confirm_border">合計金額</p>
+            <p class="reservation_confirm_highlight">¥<%= @total_fee %></p>
+            <p class="reservation_confirm_border"></p>
+        </div>
+        <div>
+            <%= form_tag("/reservations", method: :post) do %>
+                <%= hidden_field_tag :start_date, @reservation.start_date %>
+                <%= hidden_field_tag :end_date, @reservation.end_date %>
+                <%= hidden_field_tag :number_of_people, @reservation.number_of_people %>
+                <%= hidden_field_tag :total_fee, @total_fee %>
+                <%= hidden_field_tag :user_id, @user %>
+                <%= hidden_field_tag :room_id, @reservation.room_id %>
+                <%= hidden_field_tag :fee, @reservation.fee %>
+                <%= submit_tag "予約を確定する" %>
+            <% end %>
+        </div>
+    </div>
+</div>

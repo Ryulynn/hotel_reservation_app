@@ -1,0 +1,21 @@
+<!--User#new-->
+<div class="error_message">
+    <%= render"shared/error", obj: @user %>
+</div>
+<div class="user_signup">
+    <h3>新しいアカウントを作成</h3>
+    <%= form_tag("/user/create", method: :post, :multipart => true) do %>
+        <p>ユーザー名</p>
+        <%= text_field_tag :name %>
+        <p>メールアドレス</p>
+        <%= email_field_tag :email %>
+        <p>パスワード</p>
+        <%= password_field_tag :password %>
+        <p>アイコン画像</p>
+        <%= file_field_tag :image %>
+        <p>自己紹介、コメント</p>
+        <%= text_area_tag :comment %>
+        </br>
+        <%= submit_tag "新規登録" %>
+    <% end %>
+</div>

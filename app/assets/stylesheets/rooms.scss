@@ -1,0 +1,116 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+/*=====================================================================================
+                                       rooms
+=====================================================================================*/
+
+/*=====================================rooms/index=====================================*/
+.room_index{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.room_index_content{
+    width:calc(100% / 5);
+    height:450px;
+    margin:20px 0 0 0;
+    background-color:pink;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:2px solid black;
+}
+
+.room_index_content_image_div{
+    width:100%;
+    height:200px;
+    margin-top:10px;
+}
+
+.room_index_content_image_div img{
+    width:100%;
+    height:180px;
+    object-fit:cover
+}
+
+/*=====================================rooms/new=====================================*/
+.room_new_error{
+    color:red;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.room_new_error ul{
+    margin:0;
+}
+
+.content_div_new{
+    background-color:#f6f8f9;
+    padding:30px;
+    height:1000px;
+}
+
+.room_new_div{
+    width:800px;
+    background-color:white;
+    margin:30px auto auto auto;
+    padding:20px;
+}
+
+.room_new_content{
+    width:100%;
+    height:80px;
+    display:flex;
+    align-items:center;
+    border-top:2px solid black;
+}
+
+.room_new_content_last{
+    border-bottom:2px solid black;
+}
+
+.room_new_content_submit{
+    margin-top:20px;
+}
+
+.room_new_content p{
+    margin-right:100px;
+}
+
+.room_new_content input{
+    width:480px;
+    margin:auto 50px auto auto;
+}
+
+.room_new_content textarea{
+    width:480px;
+    margin:auto 50px auto auto;
+}
+
+
+/*=====================================rooms/show=====================================*/
+.room_show_content1{
+    display:flex;
+    justify-content:space-around;
+    align-items:flex-start
+}
+
+.room_show_image{
+    width:700px;
+}
+
+.room_show_image img{
+    width:100%;
+}
+
+.room_show_reservation{
+    width:360px;
+}
+
+.room_show_border{
+    border-top:solid 1px #aaa;
+}

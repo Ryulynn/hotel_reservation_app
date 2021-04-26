@@ -1,0 +1,43 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+/*=====================================reservations/index=====================================*/
+.reservations_table table{
+    border-collapse: collapse;
+    content-align:center
+}
+
+.reservations_thead tr{
+    border-top: 3px solid #eaedef;
+    border-bottom: 3px solid #eaedef;
+    
+}
+
+.reservations_tbody tr{
+    border-bottom: 1px solid #eaedef;
+}
+
+.reservations_tbody img{
+    width: 240px;
+}
+
+
+/*=====================================reservations/new=====================================*/
+.reservation_confirm{
+    margin: 20px auto;
+    width: 550px;
+    border: solid 2px black;
+    padding: 20px;
+}
+
+.reservation_confirm h3{
+    border-bottom: solid 1px #aaa;
+}
+
+.reservation_confirm_highlight{
+    background-color: #e9ecff;
+}
+
+.reservation_confirm_border{
+    border-top: solid 1px #aaa;
+}
